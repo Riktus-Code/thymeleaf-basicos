@@ -1,0 +1,35 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+<form method="post" th:object="${saludoDTO}" th:action="@{/saludos}" > <!--th:field"*{nombre}"-->
+    <div>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required />
+    </div>
+
+    <div>
+        <label for="idioma">Idioma:</label>
+        <select id="idioma" name="idioma" required>
+            <option value="" disabled selected>Selecciona idioma</option>
+            <option value="es">Español</option>
+            <option value="pr">Portugues</option>
+            <option value="en">Inglés</option>
+        </select>
+    </div>
+
+    <div>
+        <button type="submit">Enviar</button>
+    </div>
+</form>
+
+<div th:if="saludo">
+    <span th:text="${saludo}"
+</div>
+
+</body>
+</html>
