@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+<form method="post" th:object="${calculadoraDTO}" th:action="@{/calculadora}">
+
+    <div>
+        <label for="nota1">Nota 1:</label>
+        <input type="text" id="nota1" th:field="*{nota1}">
+    </div>
+
+    <div>
+        <label for="nota2">Nota 1:</label>
+        <input type="text" id="nota2" th:field="*{nota2}">
+    </div>
+
+    <div>
+        <label for="nota3">Nota 1:</label>
+        <input type="text" id="nota3" th:field="*{nota3}">
+    </div>
+
+    <div>
+        <button type="submit">Calcular</button>
+    </div>
+
+</form>
+
+<div th:if="resultado">
+    <span th:text="${resultado}"></span>
+</div>
+
+</body>
+</html>

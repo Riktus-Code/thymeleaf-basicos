@@ -9,7 +9,7 @@
 <form method="post" th:object="${saludoDTO}" th:action="@{/saludos}" > <!--th:field"*{nombre}"-->
     <div>
         <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required />
+        <input type="text" id="nombre" th:field="*{nombre}" placeholder="Escribe tu nombre" required />
     </div>
 
     <div>
@@ -28,7 +28,7 @@
 </form>
 
 <div th:if="saludo">
-    <span th:text="${saludo}"
+    <span th:text="${saludo}"></span>
 </div>
 
 </body>
