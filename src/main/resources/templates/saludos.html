@@ -3,33 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ejercicio 1</title>
+    <title>Ejercicio 1 - Saludos</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
 </head>
 <body>
-<form method="post" th:object="${saludoDTO}" th:action="@{/saludos}" > <!--th:field"*{nombre}"-->
-    <div>
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" th:field="*{nombre}" placeholder="Escribe tu nombre" required />
-    </div>
+    <div class="container">
+        <form method="post" th:object="${saludoDTO}" th:action="@{/saludos}">
+            <div>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" th:field="*{nombre}" placeholder="Escribe tu nombre" required />
+            </div>
 
-    <div>
-        <label for="idioma">Idioma:</label>
-        <select id="idioma" name="idioma" required>
-            <option value="" disabled selected>Selecciona idioma</option>
-            <option value="es">Español</option>
-            <option value="pr">Portugues</option>
-            <option value="en">Inglés</option>
-        </select>
-    </div>
+            <div>
+                <label for="idioma">Idioma:</label>
+                <select id="idioma" th:field="*{idioma}" required>
+                    <option value="" disabled selected>Selecciona idioma</option>
+                    <option value="es">Español</option>
+                    <option value="pr">Portugués</option>
+                    <option value="en">Inglés</option>
+                </select>
+            </div>
 
-    <div>
-        <button type="submit">Enviar</button>
-    </div>
-</form>
+            <div>
+                <button type="submit">Enviar</button>
+            </div>
+        </form>
 
-<div th:if="saludo">
-    <span th:text="${saludo}"></span>
-</div>
+        <div class="resultado-container" th:if="saludo">
+            <b>Mensaje</b>
+            <span th:text="${saludo}"></span>
+        </div>
+    </div>
 
 </body>
 </html>

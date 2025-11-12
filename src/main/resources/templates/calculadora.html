@@ -2,35 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Ejercicio 2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2 - Calculadora</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
 </head>
 <body>
-<form method="post" th:object="${calculadoraDTO}" th:action="@{/calculadora}">
+    <div class="container">
+        <form method="post" th:object="${calculadoraDTO}" th:action="@{/calculadora}">
 
-    <div>
-        <label for="nota1">Nota 1:</label>
-        <input type="text" id="nota1" th:field="*{nota1}">
+            <div>
+                <label for="nota1">Nota 1:</label>
+                <input type="text" id="nota1" th:field="*{nota1}">
+            </div>
+
+            <div>
+                <label for="nota2">Nota 2:</label>
+                <input type="text" id="nota2" th:field="*{nota2}">
+            </div>
+
+            <div>
+                <label for="nota3">Nota 3:</label>
+                <input type="text" id="nota3" th:field="*{nota3}">
+            </div>
+
+            <div>
+                <button type="submit">Calcular</button>
+            </div>
+
+        </form>
+
+        <div class="resultado-container" th:if="resultado">
+            <span th:text="${'Media: '+#numbers.formatDecimal(resultado,1,2)}"></span>
+        </div>
     </div>
-
-    <div>
-        <label for="nota2">Nota 1:</label>
-        <input type="text" id="nota2" th:field="*{nota2}">
-    </div>
-
-    <div>
-        <label for="nota3">Nota 1:</label>
-        <input type="text" id="nota3" th:field="*{nota3}">
-    </div>
-
-    <div>
-        <button type="submit">Calcular</button>
-    </div>
-
-</form>
-
-<div th:if="resultado">
-    <span th:text="${resultado}"></span>
-</div>
 
 </body>
 </html>

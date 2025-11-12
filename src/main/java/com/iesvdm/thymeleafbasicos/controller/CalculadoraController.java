@@ -27,7 +27,7 @@ public class CalculadoraController {
 
         total = (calculadoraDTO.getNota1()+ calculadoraDTO.getNota2()+ calculadoraDTO.getNota3())/3;
 
-        model.addAttribute("resultado","Media: "+total);
+        model.addAttribute("resultado",total);
 
         return "calculadora";
 
