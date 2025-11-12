@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3 - Conversor</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+    <div class="container">
+        <form method="post" th:object="${conversorDTO}" th:action="@{/conversor}">
+
+            <div>
+                <label for="dolares">Dólares:</label>
+                <input type="text" id="dolares" th:field="*{dolares}" placeholder="Ingresa cantidad en dólares">
+            </div>
+
+            <div>
+                <button type="submit">Convertir</button>
+            </div>
+        </form>
+
+        <div class="resultado-container" th:if="resultado">
+            <span th:text="${#numbers.formatCurrency(resultado)}"></span>
+        </div>
+    </div>
+
+</body>
+</html>
