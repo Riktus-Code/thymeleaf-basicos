@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Calendario</title>
+</head>
+<body>
+    <form th:action="@{/calendar}" th:object="${calendarRequestDTO}" method="post">
+        <label for="mes">Mes</label>
+        <select id="mes" type="text" th:field="*{mes}">
+                <option th:each="mes, state:${meses}" th:value="${state.index+1}" th:text="${mes}"></option>
+        </select>
+        <label for="anio">Año</label>
+        <input id="anio" type="number" th:field="*{anio}">
+
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cuadrática</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    
+</head>
+<body>
+<div class="container">
+    <form th:action="@{/cuadratica/formulario/enviar}" method="post" th:object="${cuadraticaDTO}">
+
+        <div>
+            <label for="a">a</label>
+            <input type="number" step="any" id="a" th:field="*{a}" placeholder="Coeficiente a">
+        </div>
+
+        <div>
+            <label for="b">b</label>
+            <input type="number" step="any" id="b" th:field="*{b}" placeholder="Coeficiente b">
+        </div>
+
+        <div>
+            <label for="c">c</label>
+            <input type="number" step="any" id="c" th:field="*{c}" placeholder="Coeficiente c">
+        </div>
+
+        <div>
+            <button type="submit">Enviar</button>
+        </div>
+
+    </form>
+
+    <div class="resultado-container" th:if="${msg}">
+        <span th:text="${msg}"></span>
+
+        <th:block th:if="${raiz1 != null and raiz2 != null}">
+            <div style="margin-top:16px;">
+                <label>Raíz 1</label>
+                <input type="text" th:value="${raiz1}" readonly>
+            </div>
+            <div style="margin-top:12px;">
+                <label>Raíz 2</label>
+                <input type="text" th:value="${raiz2}" readonly>
+            </div>
+        </th:block>
+    </div>
+</div>
+</body>
+</html>
