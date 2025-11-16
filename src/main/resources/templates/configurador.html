@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Configurador coche</title>
+    <link rel="stylesheet" th:href="@{/css/styleCoche.css}">
+</head>
+<body>
+    <form method="post" th:object="${configuradorDTO}" th:action="@{/configurador/interior/enviar}" >
+
+        <label for="color">Color:</label>
+        <select id="color" th:field="*{color}">
+            <option value="" disabled selected>Selecciona color</option>
+            <option value="black"> Negro</option>
+            <option value="white">Blanco</option>
+            <option value="eggplant">Berenjena</option>
+        </select>
+
+        <label for="material">Material:</label>
+        <select id="material" th:field="*{material}">
+            <option value="" disabled selected>Selecciona material</option>
+            <option value="wood"> Madera</option>
+            <option value="carbon">Carbono</option>
+        </select>
+
+        <button type="submit">Enviar</button>
+
+    </form>
+
+    <div class="coche"></div>
+    <span th:text="${color}"></span>
+    <span th:text="${material}"></span>
+</body>
+</html>

@@ -1,0 +1,58 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f0f0;
+    padding: 30px;
+    text-align: center;
+}
+
+form {
+    background: #ff8c42;
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+select, button {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: none;
+}
+
+/* Contenedor del coche */
+.coche {
+    width: 400px;
+    height: 200px;
+    margin: 20px auto;
+    border: 2px solid #333;
+    border-radius: 15px;
+    background: #ccc;
+    position: relative;
+}
+
+/* Tapicería (parte superior) */
+.coche .tapiceria {
+    display: block;
+    width: 100%;
+    height: 140px; /* altura visible */
+}
+
+/* Molduras (parte inferior) */
+.coche .molduras {
+    display: block;
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    bottom: 0;
+}
+
+/* Colores tapicería */
+.tapiceria.black { background-color: black; }
+.tapiceria.white { background-color: white; }
+.tapiceria.eggplant { background-color: #6a0dad; }
+
+/* Material de molduras */
+.molduras.wood { background-color: #a0522d; }
+.molduras.carbon { background-color: #444; }

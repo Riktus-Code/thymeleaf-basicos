@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Calendario</title>
+    <link rel="stylesheet" th:href="@{/css/styleCalendar.css}">
 </head>
 <body>
     <form th:action="@{/calendar}" th:object="${calendarRequestDTO}" method="post">
         <label for="mes">Mes</label>
-        <select id="mes" type="text" th:field="*{mes}">
+        <select id="mes"  th:field="*{mes}">
                 <option th:each="mes, state:${meses}" th:value="${state.index+1}" th:text="${mes}"></option>
         </select>
         <label for="anio">Año</label>
@@ -15,5 +16,20 @@
 
         <button type="submit">Enviar</button>
     </form>
+
+    <table>
+        <tr>
+            <th>Lunes</th>
+            <th>Martes</th>
+            <th>Miercoles</th>
+            <th>Jueves</th>
+            <th>Viernes</th>
+            <th>Sábado</th>
+            <th>Domingo</th>
+        </tr>
+        <tr th:each="semana : ${semanas}" >
+            <td th:each="dia: ${semana}" th:utext="${dia}"></td>
+        </tr>
+    </table>
 </body>
 </html>

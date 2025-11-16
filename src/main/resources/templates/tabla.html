@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Tabla Multiplicar</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <form th:action="@{/tabla/multiplicar/enviar}" method="post" th:object="${tablaDTO}">
+        <label for="num">Número de la tabla</label>
+        <input type="number" id="num" th:field="*{numero}" placeholder="Ingresa un número">
+        <button type="submit">Enviar</button>
+    </form>
+
+    <div th:if="${resultado}">
+        <h2>Tabla del [[${tablaDTO.numero}]]</h2>
+
+        <table>
+            <tr>
+                <th>Operación</th>
+                <th>Resultado</th>
+            </tr>
+
+            <tr th:each="resultado, iter:${resultado}">
+                <td th:text="${tablaDTO.numero + ' × ' + (iter.index + 1)}"></td>
+                <td th:text="${resultado}"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
