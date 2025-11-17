@@ -9,9 +9,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class AjedrezDTO {
-
-    private int caballo;
-    private int alfil;
-
+public class HeladoDTO {
+    private int porcentajeFresa;
+    private int porcentajeChoco;
+    private int porcentajeVainilla;
 }

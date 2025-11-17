@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f6fa;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+
+
+form {
+    width: 300px;
+    margin: 0 auto 25px auto;
+    padding: 15px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+form input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+form button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #6c8ef7;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+form button:hover {
+    background-color: #4f6fe3;
+}
+
+
+
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.15);
+}
+
+td {
+    width: 55px;
+    height: 55px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 22px;
+    font-weight: bold;
+    border: 1px solid #ccc;
+}
+
+
+tr:nth-child(odd) td:nth-child(even),
+tr:nth-child(even) td:nth-child(odd) {
+    background-color: #cdd6f0;
+}
+
+tr:nth-child(odd) td:nth-child(odd),
+tr:nth-child(even) td:nth-child(even) {
+    background-color: #f0f3ff;
+}
+
+
+td span {
+    color: #222;
+}

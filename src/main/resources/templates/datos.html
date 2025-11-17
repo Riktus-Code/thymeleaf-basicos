@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Datos personales</title>
+    <link rel="stylesheet" th:href="@{/css/styleDatos.css}" />
+</head>
+<body>
+    <h1>Datos personales</h1>
+    <form th:object="${datosDTO}" th:action="@{/datos}" method="post">
+        <button type="submit">Enviar</button>
+    </form>
+
+    <div class="resultado" th:if="datos">
+        <b>Nombre</b>
+        <span th:text="${nombre}"></span>
+        <b>Apellidos</b>
+        <span th:text="${apellido}"></span>
+        <b>Edad</b>
+        <span th:text="${edad}"></span>
+        <b>Teléfono</b>
+        <span th:text="${telefono}"></span>
+        <b>Email</b>
+        <span th:text="${email}"></span>
+    </div>
+</body>
+</html>

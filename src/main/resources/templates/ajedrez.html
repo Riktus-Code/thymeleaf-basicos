@@ -1,16 +1,29 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/styleAjedrez.css}">
 </head>
 <body>
-<form method="post" th:action="@{/ajedrez}" th:object="@{ajedrezDTO}">
-    <label for="alf">Alfil</label>
-    <input id="alf" type="number" th:field="*{alfil}">
+    <form method="post" th:action="@{/ajedrez}" th:object="${ajedrezDTO}">
+        <label for="alf">Representación del Alfil</label>
+        <input id="alf" type="number" th:field="*{alfil}">
 
-    <label for="cab">Alfil</label>
-    <input id="cab" type="number" th:field="*{caballo}">
-</form>
+        <label for="cab">Representación del Caballo</label>
+        <input id="cab" type="number" th:field="*{caballo}">
+        <button type="submit">Enviar</button>
+    </form>
+    <h1>Ajedrez resuelto</h1>
+    <table>
+        <tr th:each="fil : ${rows}">
+            <td th:each="col : ${cols}">
+            <span th:if="${filaCaballo== fil and colCaballo==col }"
+                  th:text="${nCaballo}"></span>
+            <span th:if="${filaAlfil == fil and colAlfil==col}"
+                  th:text="${nAlfil}"></span>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>
