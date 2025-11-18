@@ -24,9 +24,9 @@ public class HeladoController {
         int choco = heladoDTO.getPorcentajeChoco();
         int vainilla = heladoDTO.getPorcentajeVainilla();
 
-        model.addAttribute("fresa", "Fresa "+fresa+"%");
-        model.addAttribute("choco", "Chocolate "+choco+"%");
-        model.addAttribute("vainilla", "Vainilla "+vainilla+"%");
+        model.addAttribute("fresa", fresa);
+        model.addAttribute("choco", choco);
+        model.addAttribute("vainilla", vainilla);
 
         return "helado";
     }

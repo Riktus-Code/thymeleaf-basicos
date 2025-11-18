@@ -105,6 +105,8 @@ button:hover {
     background: #fff8f0;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 .tarrina::before {

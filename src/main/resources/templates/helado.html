@@ -9,16 +9,16 @@
     <form method="post" th:object="${heladoDTO}" th:action="@{/helado}">
 
         <div class="c">
-            <img th:src="@{/files/fre.png}">
+            <img th:src="@{/img/fre.png}">
             <label for="frs">Fresa<input type="number" id="frs" th:field="*{porcentajeFresa}">%</label>
         </div>
         <div class="f">
-            <img th:src="@{/files/choco.png}">
+            <img th:src="@{/img/choco.png}">
             <label for="cho">Chocolate<input type="number" id="cho" th:field="*{porcentajeChoco}">%</label>
         </div>
 
         <div class="v">
-            <img th:src="@{/files/vaini.png}">
+            <img th:src="@{/img/vaini.png}">
             <label for="vai">Vainilla<input type="number" id="vai" th:field="*{porcentajeVainilla}">%</label>
         </div>
 
@@ -26,9 +26,9 @@
     </form>
 
     <div class="tarrina">
-        <div th:if="${choco != 'Chocolate 0%'}" class="choco"  th:style="'height:' +${porcentajeChoco}+'px'"><span  th:text="${choco}"></span></div>
-        <div th:if="${fresa != 'Fresa 0%'}" class="fresa" th:style="'height:' +${porcentajeFresa}+'px'"><span  th:text="${fresa}" ></span></div>
-        <div th:if="${vainilla != 'Vainilla 0%'}" class="vainilla"  th:style="'height:' +${porcentajeVainilla}+'px'"><span  th:text="${vainilla}"
+        <div th:if="${choco != '0'}" class="choco"  th:style="${'height:' +choco+'px'}"><span  th:text="${'Chocolate '+choco+'%'}"></span></div>
+        <div th:if="${fresa != '0'}" class="fresa" th:style="${'height:' +fresa+'px'}"><span  th:text="${'Fresa '+fresa+'%'}" ></span></div>
+        <div th:if="${vainilla != '0'}" class="vainilla"  th:style="${'height:' +vainilla+'px'}"><span  th:text="${'Vainilla '+vainilla+'%'}"
         ></span></div>
 
     </div>

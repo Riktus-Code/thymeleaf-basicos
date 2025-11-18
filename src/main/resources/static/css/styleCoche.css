@@ -1,58 +1,90 @@
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f0f0f0;
-    padding: 30px;
-    text-align: center;
-}
-
-form {
-    background: #ff8c42;
+    background: #f5f7fa;
+    font-family: Arial, sans-serif;
+    color: #4a4a4a;
     padding: 20px;
-    border-radius: 10px;
-    display: inline-block;
-    margin-bottom: 30px;
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-select, button {
-    margin: 10px 0;
-    padding: 10px;
-    font-size: 14px;
-    border-radius: 5px;
+
+.contenedor-selects {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+label {
+    display: block;
+    margin-top: 12px;
+    font-weight: bold;
+    color: #5c5c5c;
+}
+
+
+select {
+    width: 220px;
+    padding: 8px;
+    border: 1px solid #d3d3d3;
+    border-radius: 6px;
+    background: #ffffff;
+    color: #444;
+    margin-bottom: 10px;
+    cursor: pointer;
+    display: block;
+}
+
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #a3c9f9;
     border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.25s;
 }
 
-/* Contenedor del coche */
+button:hover {
+    background: #8bb9f0;
+}
+
+
 .coche {
     width: 400px;
     height: 200px;
-    margin: 20px auto;
-    border: 2px solid #333;
+    margin: 30px auto;
+    border: 2px solid #ccd6e0;
     border-radius: 15px;
-    background: #ccc;
+    background: #e9eff5;
     position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-/* Tapicería (parte superior) */
-.coche .tapiceria {
-    display: block;
+
+.coche img {
     width: 100%;
-    height: 140px; /* altura visible */
-}
-
-/* Molduras (parte inferior) */
-.coche .molduras {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
     display: block;
-    width: 100%;
-    height: 60px;
-    position: absolute;
-    bottom: 0;
 }
 
-/* Colores tapicería */
-.tapiceria.black { background-color: black; }
-.tapiceria.white { background-color: white; }
-.tapiceria.eggplant { background-color: #6a0dad; }
+/* Colores suaves para tapicería */
+.tapiceria.black { background-color: #555; }
+.tapiceria.white { background-color: #fafafa; }
+.tapiceria.eggplant { background-color: #c6a3d8; }
 
-/* Material de molduras */
-.molduras.wood { background-color: #a0522d; }
-.molduras.carbon { background-color: #444; }
+/* Materiales suaves */
+.molduras.wood { background-color: #d7b89c; }
+.molduras.carbon { background-color: #a6a6a6; }

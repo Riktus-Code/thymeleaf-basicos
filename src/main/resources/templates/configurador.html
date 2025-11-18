@@ -11,24 +11,26 @@
         <label for="color">Color:</label>
         <select id="color" th:field="*{color}">
             <option value="" disabled selected>Selecciona color</option>
-            <option value="Negro"> Negro</option>
-            <option value="Blanco">Blanco</option>
-            <option value="Berenjena">Berenjena</option>
+            <option value="negro"> Negro</option>
+            <option value="blanco">Blanco</option>
+            <option value="berenjena">Berenjena</option>
         </select>
 
         <label for="material">Material:</label>
         <select id="material" th:field="*{material}">
             <option value="" disabled selected>Selecciona material</option>
-            <option value="Madera"> Madera</option>
-            <option value="Carbono">Carbono</option>
-        </select>
+            <option value="madera"> Madera</option>
+            <option value="carbono">Carbono</option>
+            </select>
 
         <button type="submit">Enviar</button>
 
     </form>
 
-    <div class="coche"></div>
-    <span th:text="${color}"></span>
-    <span th:text="${material}"></span>
+    <div class="coche" th:if="${color}">
+        <img th:src="${coche}">
+    </div>
+
+
 </body>
 </html>

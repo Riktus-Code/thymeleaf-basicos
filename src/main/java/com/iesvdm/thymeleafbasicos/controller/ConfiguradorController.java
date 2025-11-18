@@ -27,8 +27,10 @@ public class ConfiguradorController {
         log.info(configuradorDTO.toString());
         String color = configuradorDTO.getColor();
         String material = configuradorDTO.getMaterial();
+        String coche = "/img/coche_"+color+"_"+material+".png";
         model.addAttribute("color",color);
         model.addAttribute("material",material);
+        model.addAttribute("coche",coche);
         return "configurador";
     }
 }
